@@ -8,7 +8,7 @@ Supports Python 3.6+
 
 1. Clone the repo.
 
-    git clone https://github.com/willingc/pyquery-ql
+    git clone https://github.com/willingc/pyquery-ql.git
 
 2. From the root of the cloned repo:
 
