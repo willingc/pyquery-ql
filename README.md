@@ -1,6 +1,6 @@
 # pyquery-ql
 
-Query GitHub API v4 using GraphQL
+Query [GitHub API v4](https://developer.github.com/v4/) using [GraphQL](http://graphql.org)
 
 ## Installation
 
