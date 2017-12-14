@@ -45,8 +45,6 @@ MIT
 
 ## GraphQL info
 
-- [The Spec](http://facebook.github.io/graphql/October2016/)
-
 - [GraphQL](http://graphql.org)
     - describe your data
     - ask for what you want
@@ -120,3 +118,9 @@ MIT
     - ID
     - pros and cons of globally unique IDs
     - server defined or client derived are both options
+
+## GraphQL spec
+
+- [The Spec](http://facebook.github.io/graphql/October2016/)
+- [Response Format](http://facebook.github.io/graphql/October2016/#sec-Response-Format)
+- [Grammar Summary](http://facebook.github.io/graphql/October2016/#sec-Appendix-Grammar-Summary)
