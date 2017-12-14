@@ -1,0 +1,4 @@
+requests>=2.18
+Sphinx>=1.6
+sphinx_rtd_theme
+recommonmark==0.4
