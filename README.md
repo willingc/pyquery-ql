@@ -50,7 +50,7 @@ MIT
     - ask for what you want
     - get predictable results
 
-- A [GraphQL service}(http://graphql.org/learn/queries/) defines **types**
+- A [GraphQL service](http://graphql.org/learn/queries/) defines **types**
   and **fields** on those types. A function is created for each field on
   each type.
 
