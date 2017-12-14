@@ -29,21 +29,28 @@ def send_query(url, query, headers):
         result: query result
 
     """
-
     result = requests.post(url=url, json={'query': query}, headers=headers)
     return result
 
 
 def print_query_response(response):
     """print the query response"""
-    pprint.pprint(json.loads(response.text))
+    if response.text is not None:
+        pprint.pprint(json.loads(response.text))
+    else:
+        print("log an error")  # TODO
 
 
 if __name__ == '__main__':
 
-    # get api token and set authorization
+    # get api token
     api_token = os.environ['GITHUB_API_TOKEN']
-    headers = {'Authorization': f'token {api_token}'}
+
+    # For now start with a blank dict for headers
+    headers = {}
+    # set Authorization. can be added to other headers
+    auth_header = {'Authorization': f'token {api_token}'}
+    headers.update(auth_header)
 
     # set url to a GraphQL endpoint
     url = 'https://api.github.com/graphql'
