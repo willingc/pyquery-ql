@@ -7,3 +7,7 @@ dependencies:
 - jupyter
 - pandas
 - requests
+- Sphinx>=1.6
+- sphinx_rtd_theme
+- pip:
+  - recommonmark==0.4
