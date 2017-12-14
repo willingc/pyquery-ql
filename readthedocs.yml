@@ -1,0 +1,6 @@
+name: pyquery
+type: sphinx
+conda:
+    file: docs/environment-doc.yml
+python:
+  version: 3
