@@ -38,7 +38,8 @@ if not on_rtd:
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.intersphinx',
-    'sphinx.ext.mathjax']
+    'sphinx.ext.mathjax',
+    'nbsphinx']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,7 +53,7 @@ source_parsers = {
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = ['.rst', '.md']
+source_suffix = ['.rst', '.md', '.ipynb']
 
 # The master toctree document.
 master_doc = 'index'

@@ -18,6 +18,19 @@ a lightweight `GraphQL <http://graphql.org>`_ client.
    graphql-notes.md
 
 
+Some sample notebooks demonstrate how to use GitHub GraphQL, Jupyter notebooks,
+and pandas with Python 3.6.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Example notebooks:
+
+   examples/test-request.ipynb
+   examples/open-issues-prs-by-repo.ipynb
+   examples/report-repo-last-n-issues.ipynb
+   examples/pandas-play.ipynb
+
+
 License
 -------
 
