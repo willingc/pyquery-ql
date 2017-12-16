@@ -62,17 +62,14 @@ def create_auth_header(api_token):
 
 if __name__ == '__main__':
 
-    # get api token
     api_token = os.environ['GITHUB_API_TOKEN']
 
-    # Add authorization to headers
+    # add authorization to headers
     headers = {}
     headers.update(create_auth_header(api_token))
 
-    # set url to a GraphQL endpoint
     url = 'https://api.github.com/graphql'
 
-    # add a json query
     query = """
     {
       organization(login: "jupyterhub") {
@@ -98,5 +95,3 @@ if __name__ == '__main__':
     response = send_query(url, query, headers)
 
     pretty_print_query_response(response)
-    print_query_response(response)
-
