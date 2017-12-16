@@ -11,10 +11,13 @@ Supports Python 3.6+
 
 """
 import json
+import logging
 import os
 import pprint
 
 import requests
+
+logger = logging.getLogger(__name__)
 
 
 def send_query(url, query, headers):
@@ -30,15 +33,31 @@ def send_query(url, query, headers):
 
     """
     result = requests.post(url=url, json={'query': query}, headers=headers)
-    return result
+    if result.status_code == 200:
+        return result
+    else:
+        logger.warning(f"Request received error code: {result.status_code}")
+
+
+def pretty_print_query_response(response):
+    """print the query response"""
+    if response.text is not None:
+        pprint.pprint(json.loads(response.text))
+    else:
+        logger.warning('Response not valid.')
 
 
 def print_query_response(response):
     """print the query response"""
     if response.text is not None:
-        pprint.pprint(json.loads(response.text))
+        print(json.loads(response.text))
     else:
-        print("log an error")  # TODO
+        logger.warning('Response not valid.')
+
+
+def create_auth_header(api_token):
+    """create a dictionary for authorization header"""
+    return {'Authorization': f'token {api_token}'}
 
 
 if __name__ == '__main__':
@@ -46,11 +65,9 @@ if __name__ == '__main__':
     # get api token
     api_token = os.environ['GITHUB_API_TOKEN']
 
-    # For now start with a blank dict for headers
+    # Add authorization to headers
     headers = {}
-    # set Authorization. can be added to other headers
-    auth_header = {'Authorization': f'token {api_token}'}
-    headers.update(auth_header)
+    headers.update(create_auth_header(api_token))
 
     # set url to a GraphQL endpoint
     url = 'https://api.github.com/graphql'
@@ -79,5 +96,7 @@ if __name__ == '__main__':
     """
 
     response = send_query(url, query, headers)
+
+    pretty_print_query_response(response)
     print_query_response(response)
 
